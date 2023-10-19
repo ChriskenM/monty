@@ -1,7 +1,7 @@
 #include "monty.h"
 
 /**
- * f_pall - prints the stack
+ * _pall - prints the stack
  * @head: stack head
  * @counter: no used
  * Return: no return
@@ -22,7 +22,7 @@ void _pall(stack_t **head, unsigned int counter)
 }
 
 /**
- * f_push - add node to the stack
+ * _push - add node to the stack
  * @head: stack head
  * @counter: line_number
  * Return: no return
