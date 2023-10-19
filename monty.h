@@ -1,6 +1,15 @@
 #ifndef MONTY_H
 #define MONTY_H
 
+#include <stdio.h>
+#include <stdlib.h>
+#include <stddef.h>
+#include <string.h>
+#include <unistd.h>
+#include <sys/types.h>
+#include <fcntl.h>
+#include <ctype.h>
+
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -32,11 +41,37 @@ typedef struct instruction_s
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+/**
+ * struct bus_s - variables -args, file, line content
+ * @arg: value
+ * @file: pointer to monty file
+ * @content: line content
+ * @lifi: flag change stack <-> queue
+ * Description: carries values through the program
+ */
 
+typedef struct bus_s
+{
+	char *arg;
+	FILE *file;
+	char *content;
+	int lifi;
+}  bus_t;
+extern bus_t bus;
 
-
-
-
+/** FILES **/
+int main(int argc, char *argv[]);
+int execute(char *content, stack_t **stack, unsigned int counter, FILE *file);
+void _nop(stack_t **head, unsigned int counter);
+void add_top(stack_t **head, unsigned int counter);
+void swap_top(stack_t **head, unsigned int counter);
+void _pall(stack_t **head, unsigned int counter);
+void _push(stack_t **head, unsigned int counter);
+void _pop(stack_t **head, unsigned int counter);
+void _pint(stack_t **head, unsigned int counter);
+void free_stack(stack_t *stack);
+void addnode(stack_t **head, int n);
+void addqueue(stack_t **head, int n);
 
 
 #endif

@@ -1,5 +1,3 @@
-# monty.h
-# **The Monty language**
 
 # **0x19. C - Stacks, Queues - LIFO, FIFO**
 + What do LIFO and FIFO mean
@@ -29,5 +27,4 @@ an error occured
 + If you can’t malloc anymore, print the error message Error: malloc failed, followed by a new line, and exit with status EXIT_FAILURE.
 You have to use malloc and free and are not allowed to use any other function from man malloc (realloc, calloc, …)
 
-# monty.h
 
